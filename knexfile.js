@@ -3,14 +3,7 @@
 module.exports = {
 
     client: 'postgresql',
-     connection: {
-        host: process.env.HOST_DB,
-        port: process.env.PORT_DB,
-        user: process.env.USER_DB,
-        password: process.env.PASS_DB,
-        database: process.env.DATABASE_BASE,
-        ssl: false,
-    },
+    connection: `postgres://${process.env.USER_DB}:${process.env.PASS_DB}@${process.env.HOST_DB}:${process.env.PORT_DB}/${process.env.DATABASE_BASE}?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory`,
     pool: {
       min: 2,
       max: 10
