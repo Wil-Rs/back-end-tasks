@@ -14,6 +14,7 @@ module.exports = app => {
         const user = await app.db('users')
             .whereRaw( "LOWER(email) = LOWER(?)" ,req.body.email) // colocar email
             .first()
+            .catch(err => res.status(400).json(err)) // <====
 
         if(user){
             bcrypt.compare( req.body.password, user.password, (err, isMath) => {
