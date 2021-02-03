@@ -1,4 +1,6 @@
-const { authSecret } = require('../.env')
+//const { authSecret } = require('../.env')
+// teste heroku
+const authSecret = process.env.SECRETAUTH
 const jwt = require('jwt-simple')
 const bcrypt = require('bcrypt-nodejs')
 
