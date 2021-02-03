@@ -9,7 +9,7 @@ module.exports = {
         user: process.env.USER_DB,
         password: process.env.PASS_DB,
         database: process.env.DATABASE_BASE,
-        ssl: true,
+        ssl: false,
     },
     pool: {
       min: 2,
